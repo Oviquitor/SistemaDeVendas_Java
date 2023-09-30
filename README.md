@@ -2,18 +2,13 @@
 
 Banco de dados em MySql
 
-
-
 CREATE DATABASE BDVENDAS;
-
 
 CREATE USER 'teste'@'%' IDENTIFIED BY '123';
 
 GRANT ALL ON *.* TO 'teste'@'%' WITH GRANT OPTION;
 
-
 flush privileges;
-
 
 USE BDVENDAS;
 
@@ -34,8 +29,8 @@ CREATE TABLE tb_clientes (
   cidade varchar (100),
   estado varchar (2)
 );
-/*****************/
 
+/*****************/
 /***** TABELA FORNECEDORES *****/
 CREATE TABLE tb_fornecedores (
   id int auto_increment primary key,
@@ -52,8 +47,8 @@ CREATE TABLE tb_fornecedores (
   cidade varchar (100),
   estado varchar (2)
 );
-/*****************/
 
+/*****************/
 /***** TABELA FUNCIONARIOS *****/
 CREATE TABLE tb_funcionarios (
   id int auto_increment primary key,
@@ -74,9 +69,8 @@ CREATE TABLE tb_funcionarios (
   cidade varchar (100),
   estado varchar (2)
 );
+
 /*****************/
-
-
 /***** TABELA PRODUTOS *****/
 CREATE TABLE tb_produtos (
   id int auto_increment primary key,
@@ -87,8 +81,8 @@ CREATE TABLE tb_produtos (
 
   FOREIGN KEY (for_id) REFERENCES tb_fornecedores(id)
 );
-/*****************/
 
+/*****************/
 /***** TABELA VENDAS *****/
 CREATE TABLE tb_vendas (
   id int auto_increment primary key,
@@ -99,8 +93,8 @@ CREATE TABLE tb_vendas (
 
   FOREIGN KEY (cliente_id) REFERENCES tb_clientes(id)
 );
-/*****************/
 
+/*****************/
 /***** TABELA ITENS_VENDAS *****/
 CREATE TABLE tb_itensvendas (
   id int auto_increment primary key,
@@ -112,14 +106,11 @@ CREATE TABLE tb_itensvendas (
   FOREIGN KEY (venda_id) REFERENCES tb_vendas(id),
   FOREIGN KEY (produto_id) REFERENCES tb_produtos(id)
 );
+
 /*****************/
-
-
 insert into tb_funcionarios (nome,email,senha,nivel_acesso) values 
 ('admin', 'admin', '123', 'admin') ,
 ('Usuário', 'Usuário', '123', 'Usuário');
---
 
 select * from tb_funcionarios;
-
 select * from tb_clientes where nome like 'a%';
