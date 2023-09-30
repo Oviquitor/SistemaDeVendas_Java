@@ -12,7 +12,8 @@ flush privileges;
 
 USE BDVENDAS;
 
-/***** TABELA CLIENTES *****//n
+/***** TABELA CLIENTES *****/
+
 CREATE TABLE tb_clientes (
   id int auto_increment primary key,
   nome varchar(100),
@@ -31,7 +32,9 @@ CREATE TABLE tb_clientes (
 );
 
 /*****************/
+
 /***** TABELA FORNECEDORES *****/
+
 CREATE TABLE tb_fornecedores (
   id int auto_increment primary key,
   nome varchar(100),
@@ -49,7 +52,9 @@ CREATE TABLE tb_fornecedores (
 );
 
 /*****************/
+
 /***** TABELA FUNCIONARIOS *****/
+
 CREATE TABLE tb_funcionarios (
   id int auto_increment primary key,
   nome varchar(100),
@@ -71,7 +76,9 @@ CREATE TABLE tb_funcionarios (
 );
 
 /*****************/
+
 /***** TABELA PRODUTOS *****/
+
 CREATE TABLE tb_produtos (
   id int auto_increment primary key,
   descricao varchar(100),
@@ -83,7 +90,9 @@ CREATE TABLE tb_produtos (
 );
 
 /*****************/
+
 /***** TABELA VENDAS *****/
+
 CREATE TABLE tb_vendas (
   id int auto_increment primary key,
   cliente_id int,
@@ -95,7 +104,9 @@ CREATE TABLE tb_vendas (
 );
 
 /*****************/
+
 /***** TABELA ITENS_VENDAS *****/
+
 CREATE TABLE tb_itensvendas (
   id int auto_increment primary key,
   venda_id int,
@@ -108,6 +119,7 @@ CREATE TABLE tb_itensvendas (
 );
 
 /*****************/
+
 insert into tb_funcionarios (nome,email,senha,nivel_acesso) values 
 ('admin', 'admin', '123', 'admin') ,
 ('Usuário', 'Usuário', '123', 'Usuário');
