@@ -12,7 +12,7 @@ flush privileges;
 
 USE BDVENDAS;
 
-/***** TABELA CLIENTES *****/
+/***** TABELA CLIENTES *****//n
 CREATE TABLE tb_clientes (
   id int auto_increment primary key,
   nome varchar(100),
